@@ -87,7 +87,24 @@
                 <label for="house">Number</label><br />
                 <input type="number" id="house" name="no" required="required" placeholder="House number">
             </p>
+            <p>
+                <label for="paymentmethod">Payment Method</label><br />
+                <select id="paymentmethod" name="pm">
+                    <option>Cash on Delivery</option>
+                    <option selected="selected">Debit Card</option>
+                    <option>Credit Card</option>
+                    <option>PayPal</option>
+                    <option>Invoice</option>
+                </select>
+            </p>
+            <p>
+                <label id="gender">Gender</label><br />
+                <input id="male" type="radio" name="gender" value="male"><label for="male">Male</label><br />
+                <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label><br />
+                <input id="unspecified" type="radio" name="gender" value="unspecified"><label for="unspecified">Do not wish to provide</label><br />
+            </p>
         </form>
+        <button type="submit"><img src="../public/img/delivery_icon.png" width="24" height="24" alt="delivery_icon">Place Order</button>
     </section>
 
 <footer>

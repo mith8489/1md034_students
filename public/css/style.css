@@ -1,0 +1,22 @@
+
+body
+{
+    font-family: Arial sans-serif;
+    font-size: 1.2em;
+}
+
+.ingredient
+{
+font-weight: bold;
+}
+
+#burger-list
+{
+    background: #000;
+    color: #FFF;
+}
+
+button:hover
+{
+    background: aliceblue;
+}

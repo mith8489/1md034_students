@@ -1,27 +1,53 @@
 
 @import url("reset.css");
 
+html
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
 body
 {
     font-family: "Open Sans", sans-serif;
     font-size: 1.0em;
+    margin-bottom: 54px;
+    background: #F0F2FF;
+}
+
+header
+{
+    /**background-image: url("../img/bottles.jpg");**/
+    overflow: hidden;
+    border-bottom: 2px solid #F47A20;
+    height: 138px;
+}
+
+#header_img
+{
+    opacity: 0.5;
 }
 
 h1
 {
-    font-size: 2.0em;
-    margin: 32px;
+    font-family: 'Abril Fatface', serif;
+    font-size: 3.0em;
+    padding: 48px;
+    position: absolute;
 }
 
 h2
 {
-    font-size: 1.5em;
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.8em;
     margin-bottom: 20px;
 }
 
 h3
 {
-    font-size: 1.2em;
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 p
@@ -57,6 +83,33 @@ input[type=radio]
     color: #FFF;
 }
 
+.wrapper
+{
+    display: grid;
+    grid-gap: 20px;
+}
+
+.box {
+    padding: 20px;
+    border: 2px solid #F47A20;
+}
+
+.box:hover
+{
+    border: 2px solid #F42A20;
+    cursor: pointer;
+}
+
+.a {
+    grid-column: 1;
+}
+.b {
+    grid-column: 2;
+}
+.c {
+    grid-column: 3;
+}
+
 #burger-table
 {
     width: 100%;
@@ -67,18 +120,13 @@ input[type=radio]
     padding: 10px 20px 10px 20px;
 }
 
-td
-{
-    align-self: center;
-}
-
-td ul
+ul
 {
     list-style-type: circle;
     padding-left: 20px;
 }
 
-td li
+li
 {
     margin: 5px 0 5px 0;
 }
@@ -102,5 +150,10 @@ button:hover
 
 footer
 {
+    position: fixed;
+    background: #FFFFFF;
+    border-top: 2px solid #F47A20;
+    width: 100%;
     padding: 20px;
+    bottom: 0;
 }

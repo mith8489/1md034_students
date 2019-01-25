@@ -1,22 +1,106 @@
 
+@import url("reset.css");
+
 body
 {
-    font-family: Arial sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.0em;
+}
+
+h1
+{
+    font-size: 2.0em;
+    margin: 32px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+h3
+{
     font-size: 1.2em;
+}
+
+p
+{
+    margin: 20px 0 20px 0;
+}
+
+section
+{
+    margin: 0;
+    padding: 20px;
+}
+
+input, select
+{
+    margin-top: 4px;
+}
+
+input[type=radio]
+{
+    margin: 10px 8px 0 4px;
 }
 
 .ingredient
 {
-font-weight: bold;
+    font-weight: bold;
+    color: #FF3333;
 }
 
-#burger-list
+#burger-section
 {
     background: #000;
     color: #FFF;
 }
 
+#burger-table
+{
+    width: 100%;
+}
+
+#burger-table td
+{
+    padding: 10px 20px 10px 20px;
+}
+
+td
+{
+    align-self: center;
+}
+
+td ul
+{
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+td li
+{
+    margin: 5px 0 5px 0;
+}
+
+#customer-info
+{
+    border: 2px solid #888888;
+    margin: 4px;
+}
+
+button
+{
+    margin: 0;
+}
+
 button:hover
 {
-    background: aliceblue;
+    background: #888888;
+    cursor: pointer;
+}
+
+footer
+{
+    padding: 20px;
 }

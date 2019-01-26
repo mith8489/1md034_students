@@ -13,13 +13,12 @@ body
     font-size: 1.0em;
     margin-bottom: 54px;
     background: #F0F2FF;
+    color: #000004;
 }
 
 header
 {
-    /**background-image: url("../img/bottles.jpg");**/
     overflow: hidden;
-    border-bottom: 2px solid #F47A20;
     height: 138px;
 }
 
@@ -47,12 +46,12 @@ h3
 {
     font-family: 'Abril Fatface', serif;
     font-size: 1.5em;
-    margin-bottom: 10px;
 }
 
 p
 {
     margin: 20px 0 20px 0;
+    line-height: 1.2em;
 }
 
 section
@@ -61,63 +60,43 @@ section
     padding: 20px;
 }
 
-input, select
-{
-    margin-top: 4px;
-}
-
-input[type=radio]
-{
-    margin: 10px 8px 0 4px;
-}
-
-.ingredient
-{
-    font-weight: bold;
-    color: #FF3333;
-}
+/*-------------------------Burger Display Styles---------------------------*/
 
 #burger-section
 {
-    background: #000;
-    color: #FFF;
+    background: #000004;
+    color: #FFFFFF;
+    border-top: 2px solid #F47A20;
 }
 
 .wrapper
 {
-    display: grid;
-    grid-gap: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
-.box {
-    padding: 20px;
+.box
+{
+    padding: 20px 20px 15px 20px;
+    margin: 10px;
     border: 2px solid #F47A20;
+}
+
+.box:active
+{
+    transform: translate(2px, 2px);
+}
+
+.box img
+{
+    margin: 15px 0 10px 0;
 }
 
 .box:hover
 {
     border: 2px solid #F42A20;
     cursor: pointer;
-}
-
-.a {
-    grid-column: 1;
-}
-.b {
-    grid-column: 2;
-}
-.c {
-    grid-column: 3;
-}
-
-#burger-table
-{
-    width: 100%;
-}
-
-#burger-table td
-{
-    padding: 10px 20px 10px 20px;
 }
 
 ul
@@ -131,27 +110,92 @@ li
     margin: 5px 0 5px 0;
 }
 
+.ingredient
+{
+    font-weight: bold;
+    color: #F42A20;
+}
+
+/*-------------------------Customer Form Styles---------------------------*/
+
 #customer-info
 {
-    border: 2px solid #888888;
-    margin: 4px;
+    border-top: 2px solid #F47A20;
 }
 
+input, select
+{
+    margin-top: 4px;
+    font-size: 1.1em;
+    min-width: 200px;
+}
+
+input[type=text], input[type=number], select
+{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000004;
+}
+
+input[type=radio]
+{
+    margin: 10px 8px 0 4px;
+    min-width: 0;
+}
+/*-------------------------Button Styles---------------------------*/
 button
 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.3em;
+    background: #F47A20;
     margin: 0;
-}
-
-button:hover
-{
-    background: #888888;
+    padding: 12px;
+    min-width: 200px;
+    border: none;
+    transition: all 0.5s;
     cursor: pointer;
 }
+
+button span
+{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after
+{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span
+{
+    padding-right: 25px;
+}
+
+button:hover span:after
+{
+    opacity: 1;
+    right: 0;
+}
+
+button:focus
+{
+    outline: none;
+}
+
+/*-------------------------Footer Styles---------------------------*/
 
 footer
 {
     position: fixed;
-    background: #FFFFFF;
+    background: #F0F2FF;
     border-top: 2px solid #F47A20;
     width: 100%;
     padding: 20px;

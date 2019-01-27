@@ -62,14 +62,14 @@ section
 
 /*-------------------------Burger Display Styles---------------------------*/
 
-#burger-section
+#burger_section
 {
     background: #000004;
     color: #FFFFFF;
     border-top: 2px solid #F47A20;
 }
 
-.wrapper
+#burger-grid
 {
     display: flex;
     justify-content: flex-start;

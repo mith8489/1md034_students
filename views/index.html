@@ -3,15 +3,17 @@
 <head>
     <title>Burger</title>
     <meta charset="utf-8"/>
-    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface" rel="stylesheet">
+    <script src="js/js_script.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
 </head>
 <body>
 <header>
     <h1>Welcome to Burger</h1>
-    <img id="header_img" src="../public/img/bottles.jpg" alt="Whisky bottles">
+    <img id="header_img" src="img/bottles.jpg" alt="Whisky bottles">
 </header>
-<section id="burger-section">
+<section id="burger_section">
     <h2>
         Burger Selection
     </h2>
@@ -31,12 +33,12 @@
         Praesent bibendum turpis quis nulla commodo aliquam.
         Duis quam nunc, scelerisque at tempus et, commodo sed nulla. Proin eu laoreet lorem.
     </p>
-    <div class="wrapper">
-        <div class="box">
+    <div id="burger-grid">
+<!--        <div class="box">
             <h3>
                 Basic Burger
             </h3>
-            <img align="center" src="../public/img/basic_burger_296.jpg" width="444" height="296" alt="Basic Burger"
+            <img align="center" src="img/basic_burger_296.jpg" width="444" height="296" alt="Basic Burger"
                  title="Basic Burger">
             <ul>
                 <li>Very boring burger</li>
@@ -48,7 +50,7 @@
             <h3>
                 Fire Burger
             </h3>
-            <img align="center" src="../public/img/fire_burger_296.jpg" width="444" height="296" alt="Fire Burger"
+            <img align="center" src="img/fire_burger_296.jpg" width="444" height="296" alt="Fire Burger"
                  title="Fire Burger">
             <ul>
                 <li>Very hot burger</li>
@@ -61,7 +63,7 @@
             <h3>
                 Fancy Burger
             </h3>
-            <img align="center" src="../public/img/fancy_burger_296.jpg" width="444" height="296" alt="Fancy Burger"
+            <img align="center" src="img/fancy_burger_296.jpg" width="444" height="296" alt="Fancy Burger"
                  title="Fancy Burger">
             <ul>
                 <li>Very fancy burger</li>
@@ -74,7 +76,7 @@
             <h3>
                 Mystery Burger
             </h3>
-            <img align="center" src="../public/img/mystery_burger_296.png" width="444" height="296" alt="Mystery Burger"
+            <img align="center" src="img/mystery_burger_296.png" width="444" height="296" alt="Mystery Burger"
                  title="Mystery Burger">
             <ul>
                 <li>Very mysterious burger</li>
@@ -86,7 +88,7 @@
             <h3>
                 Black Ink Burger
             </h3>
-            <img align="center" src="../public/img/black_ink_burger_296.png" width="444" height="296" alt="Black Ink Burger"
+            <img align="center" src="img/black_ink_burger_296.png" width="444" height="296" alt="Black Ink Burger"
                  title="Black Ink Burger">
             <ul>
                 <li>Very black burger (bread)</li>
@@ -98,14 +100,14 @@
             <h3>
                 Sad Burger
             </h3>
-            <img align="center" src="../public/img/sad_burger.jpg" width="444" height="296" alt="Sad Burger"
+            <img align="center" src="img/sad_burger.jpg" width="444" height="296" alt="Sad Burger"
                  title="Sad Burger">
             <ul>
                 <li>Very sad burger</li>
                 <li>Contains <span class="ingredient">sadness</span></li>
                 <li>Do not buy this burger</li>
             </ul>
-        </div>
+        </div>-->
     </div>
 </section>
 <section id="customer-info">
@@ -155,7 +157,7 @@
     </form>
     <button type="submit">
         <span>Place Order</span><br />
-        <img src="../public/img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
+        <img src="img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
     </button>
 </section>
 <footer>

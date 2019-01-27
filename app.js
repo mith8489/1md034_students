@@ -14,7 +14,7 @@ var port = 3000;
 app.set('port', (process.env.PORT || port));
 
 // Serve static assets from public/
-app.use(express.static(path.join(__dirname, 'public/')));
+app.use(express.static(path.join(__dirname, 'public')));
 // Serve vue from node_modules as vue/
 app.use('/vue', express.static(path.join(__dirname, '/node_modules/vue/dist/')));
 // Serve index.html directly as root page

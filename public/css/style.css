@@ -78,7 +78,7 @@ section
 
 .box
 {
-    padding: 20px 20px 15px 20px;
+    padding: 20px 20px 15px;
     margin: 10px;
     border: 2px solid #F47A20;
 }
@@ -142,7 +142,9 @@ input[type=radio]
     margin: 10px 8px 0 4px;
     min-width: 0;
 }
+
 /*-------------------------Button Styles---------------------------*/
+
 button
 {
     font-family: 'Abril Fatface', serif;
@@ -152,7 +154,7 @@ button
     padding: 12px;
     min-width: 200px;
     border: none;
-    transition: all 0.5s;
+    box-shadow: 2px 2px #000004;
     cursor: pointer;
 }
 
@@ -183,6 +185,12 @@ button:hover span:after
 {
     opacity: 1;
     right: 0;
+}
+
+button:active
+{
+    box-shadow: none;
+    transform: translate(2px, 2px);
 }
 
 button:focus

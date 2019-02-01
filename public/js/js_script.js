@@ -1,4 +1,4 @@
-function Burger(name, imgLink, attribute, ingredients, kcal, desc) {
+/**function Burger(name, imgLink, attribute, ingredients, kcal, desc) {
     this.name = name;
     this.imgLink = imgLink;
     this.attribute = attribute;
@@ -6,67 +6,13 @@ function Burger(name, imgLink, attribute, ingredients, kcal, desc) {
     this.kcal = kcal;
     this.desc = desc;
 }
-
+*/
 function printInfo(burger) {
     console.log("Name: " + burger.name);
     console.log("Calorie count: " + burger.kcal);
 }
 
-let basicBurger = new Burger(
-    "Basic Burger",
-    "img/basic_burger_296.jpg",
-    "boring",
-    ["bread", "meat"],
-    500,
-    "Not interesting"
-);
-
-let fireBurger = new Burger(
-    "Fire Burger",
-    "img/fire_burger_296.jpg",
-    "hot",
-    ["gluten", "lactose", "fire"],
-    550,
-    "Not for the faint of heart"
-);
-
-let fancyBurger = new Burger(
-    "Fancy Burger",
-    "img/fancy_burger_296.jpg",
-    "hot",
-    ["truffles", "gold"],
-    750,
-    "Not for the faint of heart"
-);
-
-let mysteryBurger = new Burger(
-    "Mystery Burger",
-    "img/mystery_burger_296.png",
-    "mysterious",
-    ["unknown substances"],
-    0,
-    "Green"
-);
-
-let blackInkBurger = new Burger(
-    "Black Ink Burger",
-    "img/black_ink_burger_296.png",
-    "black",
-    ["black squid ink"],
-    450,
-    "No squids in burger"
-);
-
-let sadBurger = new Burger(
-    "Sad Burger",
-    "img/sad_burger.jpg",
-    "sad",
-    ["sadness"],
-    300,
-    "Do not buy this burger"
-);
-
-var burgers = [basicBurger, fireBurger, fancyBurger, mysteryBurger, blackInkBurger, sadBurger];
+console.log(typeof burgers)
 
 window.onload = addBurgers(burgers);
 
@@ -88,7 +34,7 @@ function addBurger(burger) {
     burgerBox.appendChild(burgerHeadline);
 
     var burgerImage = document.createElement("img");
-    burgerImage.setAttribute("src", burger.imgLink);
+    burgerImage.setAttribute("src", burger.img);
     burgerImage.setAttribute("height", "296");
     burgerImage.setAttribute("width", "444");
     burgerImage.setAttribute("alt", burger.name);
@@ -100,7 +46,7 @@ function addBurger(burger) {
     var burgerIngredients = setIngredients(burger);
     var burgerDesc = document.createElement("li");
 
-    burgerKcal.innerHTML = burger.kcal + " kcal";
+    burgerKcal.innerHTML = burger.kCal + " kCal";
     burgerAttribute.innerHTML = "Very " + burger.attribute + " burger";
     burgerDesc.innerHTML = burger.desc;
 

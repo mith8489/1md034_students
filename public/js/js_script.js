@@ -75,3 +75,38 @@ function setIngredients(burger) {
     ingredientList.innerHTML = ingredients;
     return ingredientList;
 }
+
+var submitButton = document.getElementById("submit-button");
+
+submitButton.onclick = buttonClick;
+
+function buttonClick()
+{
+    var fullName = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var street = document.getElementById("street").value;
+    var house = document.getElementById("house").value;
+    var paymentMethod = document.getElementById("paymentmethod").value;
+    var gender = getGender();
+
+    var formValues = [fullName, email, street, house, paymentMethod, gender];
+    console.log(typeof formValues);
+    for (var i = 0; i < formValues.length; i++)
+    {
+        console.log(formValues[i]);
+    }
+}
+
+function getGender()
+{
+    var genders = document.getElementsByName("gender");
+    var gender;
+
+    for(var i = 0; i < genders.length; i++) {
+        if(genders[i].checked)
+            gender = genders[i].value;
+    }
+    return gender;
+}
+
+

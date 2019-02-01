@@ -33,6 +33,10 @@ function addBurger(burger) {
     burgerHeadline.innerHTML = burger.name;
     burgerBox.appendChild(burgerHeadline);
 
+    var checkMark = document.createElement("p");
+    checkMark.classList.add("check-mark");
+    burgerBox.appendChild(checkMark);
+
     var burgerImage = document.createElement("img");
     burgerImage.setAttribute("src", burger.img);
     burgerImage.setAttribute("height", "296");
@@ -46,14 +50,33 @@ function addBurger(burger) {
     var burgerIngredients = setIngredients(burger);
     var burgerDesc = document.createElement("li");
 
+
     burgerKcal.innerHTML = burger.kCal + " kCal";
     burgerAttribute.innerHTML = "Very " + burger.attribute + " burger";
     burgerDesc.innerHTML = burger.desc;
 
     burgerDescList.append(burgerKcal, burgerAttribute, burgerIngredients, burgerDesc);
+
     burgerBox.appendChild(burgerDescList);
 
+    burgerBox.addEventListener("click", function () {
+        toggleCheckMark(checkMark);
+    });
+
+
     burgerGrid.appendChild(burgerBox);
+}
+
+function toggleCheckMark(checkMark)
+{
+    if (checkMark.innerHTML !== "")
+    {
+        checkMark.innerHTML = "";
+    }
+    else
+    {
+        checkMark.innerHTML = "✓";
+    }
 }
 
 function setIngredients(burger) {

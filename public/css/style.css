@@ -88,9 +88,14 @@ section
     transform: translate(2px, 2px);
 }
 
+.box h3
+{
+}
+
 .box img
 {
     margin: 15px 0 10px 0;
+    clear: right;
 }
 
 .box:hover
@@ -103,6 +108,7 @@ ul
 {
     list-style-type: circle;
     padding-left: 20px;
+    width: 50%;
 }
 
 li
@@ -114,6 +120,12 @@ li
 {
     font-weight: bold;
     color: #F42A20;
+}
+
+.check-mark
+{
+    font-size: 3em;
+    color: #F47A20;
 }
 
 /*-------------------------Customer Form Styles---------------------------*/

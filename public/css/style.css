@@ -225,11 +225,59 @@ button:focus
     outline: none;
 }
 
+/*-------------------------Order List Styles---------------------------*/
+#order-display
+{
+    display: none;
+    background: #200537;
+    padding: 20px;
+    border-top: 2px solid #F47A20;
+}
+
+#order-list
+{
+    grid-column: 1;
+    grid-row: 1;
+    list-style-type: none;
+    padding: 10px;
+    background: #F47A20;
+    box-shadow: 2px 2px #000004;
+    color: #000004;
+    font-size: 1.3em;
+    width: 180px;
+}
+
+#order-list > li
+{
+    padding: 4px 0;
+    font-family: 'Abril Fatface', serif;
+}
+
+#customer-details
+{
+    margin-bottom: 20px;
+    grid-column: 2;
+    grid-row: 1;
+    max-height: 50px;
+    display: grid;
+    grid-template-columns: 180px 180px 180px;
+    color: #F0F2FF;
+}
+
+#customer-details > p
+{
+    margin: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #F0F2FF;
+    color: #F0F2FF;
+}
+
 /*-------------------------Footer Styles---------------------------*/
 
 footer
 {
     position: fixed;
+    font-family: 'Abril Fatface', serif;
     background: #F0F2FF;
     border-top: 2px solid #F47A20;
     width: 100%;

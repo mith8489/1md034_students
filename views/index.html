@@ -4,7 +4,7 @@
     <title>Burger</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Lora" rel="stylesheet">
     <script type="text/javascript" src="js/menu.js" defer></script>
     <script type="text/javascript" src="js/js_script.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
@@ -78,9 +78,9 @@
         </p>
         <p>
             <label id="gender">Gender</label><br/>
-            <input id="male" type="radio" name="gender" value="male"><label for="male">Male</label><br/>
-            <input id="female" type="radio" name="gender" value="female"><label for="female">Female</label><br/>
-            <input id="unspecified" type="radio" name="gender" value="unspecified"><label
+            <input id="male" type="radio" name="gender" value="Male"><label for="male">Male</label><br/>
+            <input id="female" type="radio" name="gender" value="Female"><label for="female">Female</label><br/>
+            <input id="unspecified" type="radio" name="gender" value="Unspecified"><label
                 for="unspecified">Unspecified</label><br/>
         </p>
     </form>
@@ -89,6 +89,20 @@
         <img src="img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
     </button>
 </section>
+<div id="order-display">
+    <ul id="order-list">
+        <!--Burgers go here-->
+    </ul>
+    <div id="customer-details">
+        <!--Customer details go here-->
+        <p id="name-display"></p>
+        <p id="email-display"></p>
+        <p id="payment-display"></p>
+        <p id="street-display"></p>
+        <p id="number-display"></p>
+        <p id="gender-display"></p>
+    </div>
+</div>
 <footer>
     © 2018 Capital Burger Inc.
 </footer>

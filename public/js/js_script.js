@@ -1,18 +1,9 @@
-/**function Burger(name, imgLink, attribute, ingredients, kcal, desc) {
-    this.name = name;
-    this.imgLink = imgLink;
-    this.attribute = attribute;
-    this.ingredients = ingredients;
-    this.kcal = kcal;
-    this.desc = desc;
-}
-*/
-function printInfo(burger) {
-    console.log("Name: " + burger.name);
-    console.log("Calorie count: " + burger.kcal);
-}
 
-console.log(typeof burgers)
+var orderedBurgers = new Map();
+for (var i = 0; i < burgers.length; i++)
+{
+    orderedBurgers.set(burgers[i], 0);
+}
 
 window.onload = addBurgers(burgers);
 
@@ -35,6 +26,10 @@ function addBurger(burger) {
 
     var checkMark = document.createElement("p");
     checkMark.classList.add("check-mark");
+    checkMark.innerHTML = " ";
+    checkMark.addEventListener("click", function () {
+        addOrRemoveBurger(checkMark, burger);
+    });
     burgerBox.appendChild(checkMark);
 
     var burgerImage = document.createElement("img");
@@ -59,23 +54,22 @@ function addBurger(burger) {
 
     burgerBox.appendChild(burgerDescList);
 
-    burgerBox.addEventListener("click", function () {
-        toggleCheckMark(checkMark);
-    });
-
-
     burgerGrid.appendChild(burgerBox);
 }
 
-function toggleCheckMark(checkMark)
+function addOrRemoveBurger(checkMark, burger)
 {
-    if (checkMark.innerHTML !== "")
+    if (checkMark.innerHTML !== " ")
     {
-        checkMark.innerHTML = "";
+        checkMark.innerHTML = " ";
+        orderedBurgers.set(burger, (orderedBurgers.get(burger) - 1));
+        console.log(burger.name + " removed from order");
     }
     else
     {
         checkMark.innerHTML = "✓";
+        orderedBurgers.set(burger, (orderedBurgers.get(burger) + 1));
+        console.log(burger.name + " added to order");
     }
 }
 
@@ -118,6 +112,27 @@ function buttonClick()
     {
         console.log(formValues[i]);
     }
+    console.log("Burgers ordered:");
+
+    function printBurgerQtys(value, key)
+    {
+        if (value > 0)
+        {
+            console.log(`${key.name}: ${value}`);
+        }
+    }
+
+    orderedBurgers.forEach(printBurgerQtys);
+/**
+    for (var j = 0; j < orderedBurgers.getAllKeys().length; j++)
+    {
+        var burger = orderedBurgers.getAllKeys()[j];
+        var quantity = orderedBurgers.get(burger);
+        if (quantity > 0)
+        {
+            console.log(burger.name + " x " + quantity);
+        }
+    }*/
 }
 
 function getGender()

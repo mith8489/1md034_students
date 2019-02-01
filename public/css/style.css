@@ -38,14 +38,14 @@ h1
 h2
 {
     font-family: 'Abril Fatface', serif;
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
 h3
 {
     font-family: 'Abril Fatface', serif;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 p
@@ -81,34 +81,44 @@ section
     padding: 20px 20px 15px;
     margin: 10px;
     border: 2px solid #F47A20;
+    display: grid;
+    grid-template-columns: 390px 54px;
 }
 
-.box:active
+.box + .box
 {
-    transform: translate(2px, 2px);
+//    border-left: 2px solid #F47A20;
 }
 
 .box h3
 {
+    grid-column: 1 / span 2;
 }
 
 .box img
 {
     margin: 15px 0 10px 0;
-    clear: right;
-}
-
-.box:hover
-{
-    border: 2px solid #F42A20;
-    cursor: pointer;
+    grid-column: 1 / span 2;
+    grid-row: 2;
 }
 
 ul
 {
     list-style-type: circle;
     padding-left: 20px;
-    width: 50%;
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.check-mark
+{
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 4em;
+    color: #F0F2FF;
+    margin: 0;
+    padding: 0 4px 0;
+    border: 2px solid #F47A20;
 }
 
 li
@@ -122,10 +132,15 @@ li
     color: #F42A20;
 }
 
-.check-mark
+.check-mark:hover
 {
-    font-size: 3em;
-    color: #F47A20;
+    border: 2px solid #F42A20;
+    cursor: pointer;
+}
+
+.check-mark:active
+{
+    transform: translate(2px, 2px);
 }
 
 /*-------------------------Customer Form Styles---------------------------*/

@@ -28,7 +28,7 @@ var burgers = [
         "name": "Mystery Burger",
         "img": "img/mystery_burger_296.png",
         "kCal": 0,
-        "attribute": "boring",
+        "attribute": "mysterious",
         "ingredients": ["unknown substances"],
         "desc": "Green?"
     },

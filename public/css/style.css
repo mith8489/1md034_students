@@ -121,9 +121,15 @@ li
     font-family: 'Abril Fatface', serif;
     grid-row: 3;
     max-width: 54px;
-//    height: 54px;
     font-size: 2.5em;
     margin: auto 0;
+    background: none;
+    color: #F0F2FF;
+}
+
+.box button:hover
+{
+    color: #F47A20;
 }
 
 /*-------------------------Customer Form Styles---------------------------*/
@@ -206,6 +212,11 @@ button:active
 button:focus
 {
     outline: none;
+}
+
+button:disabled
+{
+    cursor: default;
 }
 
 /*-------------------------Order List Styles---------------------------*/

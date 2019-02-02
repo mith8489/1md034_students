@@ -47,6 +47,6 @@ var burgers = [
         "attribute": "sad",
         "ingredients": ["sadness"],
         "desc": "Do not buy this burger"
-    },
+    }
 
 ]

@@ -27,6 +27,7 @@ function addBurger(burger) {
     var burgerPlusBtn = document.createElement("button");
     var burgerMinusBtn = document.createElement("button");
     var burgerCounter = document.createElement("button");
+    burgerCounter.disabled = true;
 
     burgerPlusBtn.innerHTML = "+";
     burgerMinusBtn.innerHTML = "-";

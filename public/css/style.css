@@ -80,25 +80,20 @@ section
 {
     padding: 20px 20px 15px;
     margin: 10px;
-    border: 2px solid #F47A20;
+    border: 1px solid #F47A20;
     display: grid;
-    grid-template-columns: 390px 54px;
-}
-
-.box + .box
-{
-//    border-left: 2px solid #F47A20;
+    grid-template-columns: auto 64px 64px 64px;
 }
 
 .box h3
 {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
 }
 
 .box img
 {
     margin: 15px 0 10px 0;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 4;
     grid-row: 2;
 }
 
@@ -108,17 +103,6 @@ ul
     padding-left: 20px;
     grid-column: 1;
     grid-row: 3;
-}
-
-.check-mark
-{
-    grid-column: 2;
-    grid-row: 3;
-    font-size: 4em;
-    color: #F0F2FF;
-    margin: 0;
-    padding: 0 4px 0;
-    border: 2px solid #F47A20;
 }
 
 li
@@ -132,15 +116,14 @@ li
     color: #F42A20;
 }
 
-.check-mark:hover
+.box button
 {
-    border: 2px solid #F42A20;
-    cursor: pointer;
-}
-
-.check-mark:active
-{
-    transform: translate(2px, 2px);
+    font-family: 'Abril Fatface', serif;
+    grid-row: 3;
+    max-width: 54px;
+//    height: 54px;
+    font-size: 2.5em;
+    margin: auto 0;
 }
 
 /*-------------------------Customer Form Styles---------------------------*/
@@ -179,13 +162,13 @@ button
     background: #F47A20;
     margin: 0;
     padding: 12px;
-    min-width: 200px;
+    width: 200px;
     border: none;
     box-shadow: 2px 2px #000004;
     cursor: pointer;
 }
 
-button span
+#submit-button span
 {
     cursor: pointer;
     display: inline-block;
@@ -193,7 +176,7 @@ button span
     transition: 0.5s;
 }
 
-button span:after
+#submit-button span:after
 {
     content: '\00bb';
     position: absolute;
@@ -203,12 +186,12 @@ button span:after
     transition: 0.5s;
 }
 
-button:hover span
+#submit-button:hover span
 {
     padding-right: 25px;
 }
 
-button:hover span:after
+#submit-button:hover span:after
 {
     opacity: 1;
     right: 0;

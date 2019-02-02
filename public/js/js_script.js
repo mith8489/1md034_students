@@ -24,13 +24,23 @@ function addBurger(burger) {
     burgerHeadline.innerHTML = burger.name;
     burgerBox.appendChild(burgerHeadline);
 
-    var checkMark = document.createElement("p");
-    checkMark.classList.add("check-mark");
-    checkMark.innerHTML = " ";
-    checkMark.addEventListener("click", function () {
-        addOrRemoveBurger(checkMark, burger);
+    var burgerPlusBtn = document.createElement("button");
+    var burgerMinusBtn = document.createElement("button");
+    var burgerCounter = document.createElement("button");
+
+    burgerPlusBtn.innerHTML = "+";
+    burgerMinusBtn.innerHTML = "-";
+    burgerCounter.innerHTML = "0";
+
+    burgerBox.append(burgerMinusBtn, burgerPlusBtn, burgerCounter);
+
+    burgerPlusBtn.addEventListener("click", function () {
+        upCounter(burgerCounter, burger);
     });
-    burgerBox.appendChild(checkMark);
+
+    burgerMinusBtn.addEventListener("click", function () {
+        downCounter(burgerCounter, burger);
+    });
 
     var burgerImage = document.createElement("img");
     burgerImage.setAttribute("src", burger.img);
@@ -57,20 +67,24 @@ function addBurger(burger) {
     burgerGrid.appendChild(burgerBox);
 }
 
-function addOrRemoveBurger(checkMark, burger)
+function upCounter(counter, burger)
 {
-    if (checkMark.innerHTML !== " ")
-    {
-        checkMark.innerHTML = " ";
-        orderedBurgers.set(burger, (orderedBurgers.get(burger) - 1));
-        console.log(burger.name + " removed from order");
-    }
-    else
-    {
-        checkMark.innerHTML = "✓";
         orderedBurgers.set(burger, (orderedBurgers.get(burger) + 1));
         console.log(burger.name + " added to order");
+        counter.innerHTML = orderedBurgers.get(burger);
+}
+
+function downCounter(counter, burger)
+{
+    var burgerCount = orderedBurgers.get(burger);
+
+    if (burgerCount > 0)
+    {
+        orderedBurgers.set(burger, burgerCount - 1);
+        console.log(burger.name + " removed from order");
+        counter.innerHTML = orderedBurgers.get(burger);
     }
+
 }
 
 function setIngredients(burger) {

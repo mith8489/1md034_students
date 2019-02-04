@@ -92,10 +92,10 @@ function setIngredients(burger) {
     ingredientList.innerHTML = ingredients;
     return ingredientList;
 }
-
+/**
 var submitButton = document.getElementById("submit-button");
 
-submitButton.onclick = buttonClick;
+submitButton.onclick = buttonClick;*/
 
 function buttonClick()
 {

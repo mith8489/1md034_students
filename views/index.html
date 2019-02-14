@@ -13,7 +13,7 @@
 <body>
 <div id="app">
     <header>
-        <h1>Welcome to Burger</h1>
+        <h1>BURGER</h1>
         <img id="header_img" src="img/bottles.jpg" alt="Whisky bottles">
     </header>
         <div id="burger_section">
@@ -27,7 +27,7 @@
                         <h3>
                             {{ burger.name }}
                         </h3>
-                        <p v-on:click="toggleCheckmark" class="check-mark">✓</p>
+                        <p v-on:click="toggleCheckmark(burger)" class="check-mark"> </p>
                         <img align="center" :src="burger.img" width="444" height="296" :alt="burger.name"
                              title="Basic Burger">
                         <ul>
@@ -47,7 +47,6 @@
             Suspendisse venenatis dolor ut felis maximus dignissim. Donec interdum egestas sapien ac tempor.
             Sed aliquam euismod dolor, sit amet viverra felis. Phasellus ut tellus at est euismod porttitor.
         </p>
-
         <h4>Delivery Information:</h4>
         <form>
             <p>

@@ -50,3 +50,9 @@ var burgers = [
     },
 
 ]
+
+var orderedBurgers = new Map();
+for (var i = 0; i < burgers.length; i++)
+{
+    orderedBurgers.set(burgers[i], 0);
+}

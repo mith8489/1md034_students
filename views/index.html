@@ -5,107 +5,107 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Lora" rel="stylesheet">
+    <script src="https://vuejs.org/js/vue.js"></script>
     <script type="text/javascript" src="js/menu.js" defer></script>
     <script type="text/javascript" src="js/js_script.js" defer></script>
     <script type="text/javascript" src="js/vue_script.js" defer></script>
-    <script src="https://vuejs.org/js/vue.js"></script>
 </head>
 <body>
-<header>
-    <h1>Welcome to Burger</h1>
-    <img id="header_img" src="img/bottles.jpg" alt="Whisky bottles">
-</header>
-<section id="burger_section">
-    <h2>
-        Burger Selection
-    </h2>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor commodo ex non pulvinar. Nullam vel odio nisi.
-        Aliquam non iaculis ligula. Vestibulum eget nibh fermentum mi aliquet iaculis.
-        Sed dignissim urna diam, eget auctor ipsum tempor eu. Quisque interdum nisi et lobortis egestas.
-        Sed lobortis at lorem non condimentum. Aenean in mollis elit, at eleifend ligula.
-        Sed maximus metus sed rhoncus rhoncus.
-    </p>
-    <p>
-        In hac habitasse platea dictumst. Donec imperdiet condimentum tortor, a malesuada diam volutpat eu.
-        Proin venenatis at massa luctus ornare. Vestibulum non porta turpis. Quisque ut felis sed libero venenatis
-        dictum.
-        Proin commodo elit sit amet risus pretium pretium. Vivamus efficitur felis augue, eget tincidunt quam tristique
-        sit amet.
-        Cras tempor malesuada porttitor. In molestie eget mauris eget venenatis. Proin eu feugiat augue.
-        Praesent bibendum turpis quis nulla commodo aliquam.
-        Duis quam nunc, scelerisque at tempus et, commodo sed nulla. Proin eu laoreet lorem.
-    </p>
-    <div id="burger-grid">
-        <!--Burger boxes go here-->
-    </div>
-</section>
-<section id="customer-info">
-    <h2>Customer Info</h2>
-    <p>
-        Donec at arcu justo. Maecenas eu mi commodo, dignissim turpis quis, vestibulum nisl.
-        Maecenas ultrices porta leo vitae tempor. Maecenas iaculis imperdiet lacus.
-        Suspendisse venenatis dolor ut felis maximus dignissim. Donec interdum egestas sapien ac tempor.
-        Sed aliquam euismod dolor, sit amet viverra felis. Phasellus ut tellus at est euismod porttitor.
-    </p>
+<div id="app">
+    <header>
+        <h1>Welcome to Burger</h1>
+        <img id="header_img" src="img/bottles.jpg" alt="Whisky bottles">
+    </header>
+        <div id="burger_section">
+            <h2>
+                Burger Selection
+            </h2>
+            <div id="burger-grid">
+                <template v-for="burger in burgers">
+                    <!--Burger boxes go here-->
+                    <div class="box">
+                        <h3>
+                            {{ burger.name }}
+                        </h3>
+                        <p v-on:click="toggleCheckmark" class="check-mark">✓</p>
+                        <img align="center" :src="burger.img" width="444" height="296" :alt="burger.name"
+                             title="Basic Burger">
+                        <ul>
+                            <li>Very {{ burger.attribute }} burger</li>
+                            <li>Contains<span v-for="ingredient in burger.ingredients" class="ingredient"> {{ ingredient }}</span></li>
+                            <li>{{ burger.desc }}</li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+    <section id="customer-info">
+        <h2>Customer Info</h2>
+        <p>
+            Donec at arcu justo. Maecenas eu mi commodo, dignissim turpis quis, vestibulum nisl.
+            Maecenas ultrices porta leo vitae tempor. Maecenas iaculis imperdiet lacus.
+            Suspendisse venenatis dolor ut felis maximus dignissim. Donec interdum egestas sapien ac tempor.
+            Sed aliquam euismod dolor, sit amet viverra felis. Phasellus ut tellus at est euismod porttitor.
+        </p>
 
-    <h4>Delivery Information:</h4>
-    <form>
-        <p>
-            <label for="fullname">Full Name</label><br/>
-            <input type="text" id="fullname" name="fn" required="required" placeholder="Full name">
-        </p>
-        <p>
-            <label for="email">E-mail</label><br/>
-            <input type="text" id="email" name="em" required="required" placeholder="E-mail">
-        </p>
-        <p>
-            <label for="street">Street</label><br/>
-            <input type="text" id="street" name="st" required="required" placeholder="Street">
-        </p>
-        <p>
-            <label for="house">Number</label><br/>
-            <input type="number" id="house" name="no" required="required" placeholder="House number">
-        </p>
-        <p>
-            <label for="paymentmethod">Payment Method</label><br/>
-            <select id="paymentmethod" name="pm">
-                <option>Cash on Delivery</option>
-                <option selected="selected">Debit Card</option>
-                <option>Credit Card</option>
-                <option>PayPal</option>
-                <option>Invoice</option>
-            </select>
-        </p>
-        <p>
-            <label id="gender">Gender</label><br/>
-            <input id="male" type="radio" name="gender" value="Male"><label for="male">Male</label><br/>
-            <input id="female" type="radio" name="gender" value="Female"><label for="female">Female</label><br/>
-            <input id="unspecified" type="radio" name="gender" value="Unspecified"><label
-                for="unspecified">Unspecified</label><br/>
-        </p>
-    </form>
-    <button v-on:click="submitData" type="submit" id="submit-button" >
-        <span>Place Order</span><br/>
-        <img src="img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
-    </button>
-</section>
-<div id="order-display">
-    <ul id="order-list">
-        <!--Burgers go here-->
-    </ul>
-    <div id="customer-details">
-        <!--Customer details go here-->
-        <p id="name-display"></p>
-        <p id="email-display"></p>
-        <p id="payment-display"></p>
-        <p id="street-display"></p>
-        <p id="number-display"></p>
-        <p id="gender-display"></p>
+        <h4>Delivery Information:</h4>
+        <form>
+            <p>
+                <label for="fullname">Full Name</label><br/>
+                <input type="text" id="fullname" name="fn" required="required" placeholder="Full name">
+            </p>
+            <p>
+                <label for="email">E-mail</label><br/>
+                <input type="text" id="email" name="em" required="required" placeholder="E-mail">
+            </p>
+            <p>
+                <label for="street">Street</label><br/>
+                <input type="text" id="street" name="st" required="required" placeholder="Street">
+            </p>
+            <p>
+                <label for="house">Number</label><br/>
+                <input type="number" id="house" name="no" required="required" placeholder="House number">
+            </p>
+            <p>
+                <label for="paymentmethod">Payment Method</label><br/>
+                <select id="paymentmethod" name="pm">
+                    <option>Cash on Delivery</option>
+                    <option selected="selected">Debit Card</option>
+                    <option>Credit Card</option>
+                    <option>PayPal</option>
+                    <option>Invoice</option>
+                </select>
+            </p>
+            <p>
+                <label id="gender">Gender</label><br/>
+                <input id="male" type="radio" name="gender" value="Male"><label for="male">Male</label><br/>
+                <input id="female" type="radio" name="gender" value="Female"><label for="female">Female</label><br/>
+                <input id="unspecified" type="radio" name="gender" value="Unspecified"><label
+                    for="unspecified">Unspecified</label><br/>
+            </p>
+        </form>
+        <button v-on:click="submitData" type="submit" id="submit-button" >
+            <span>Place Order</span><br/>
+            <img src="img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
+        </button>
+    </section>
+    <div id="order-display">
+        <ul id="order-list">
+            <!--Burgers go here-->
+        </ul>
+        <div id="customer-details">
+            <!--Customer details go here-->
+            <p id="name-display"></p>
+            <p id="email-display"></p>
+            <p id="payment-display"></p>
+            <p id="street-display"></p>
+            <p id="number-display"></p>
+            <p id="gender-display"></p>
+        </div>
     </div>
+    <footer>
+        © 2018 Capital Burger Inc.
+    </footer>
 </div>
-<footer>
-    © 2018 Capital Burger Inc.
-</footer>
 </body>
 </html>

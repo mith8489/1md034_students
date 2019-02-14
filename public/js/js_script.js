@@ -5,7 +5,7 @@ for (var i = 0; i < burgers.length; i++)
     orderedBurgers.set(burgers[i], 0);
 }
 
-window.onload = addBurgers(burgers);
+// window.onload = addBurgers(burgers);
 
 function addBurgers(burgerArray) {
     for (var i = 0; i < burgerArray.length; i++) {

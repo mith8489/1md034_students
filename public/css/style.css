@@ -16,6 +16,15 @@ body
     color: #000004;
 }
 
+#app
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.0em;
+    margin-bottom: 54px;
+    background: #F0F2FF;
+    color: #000004;
+}
+
 header
 {
     overflow: hidden;

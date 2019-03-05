@@ -5,6 +5,8 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Abril+Fatface|Lora" rel="stylesheet">
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="/socket.io/socket.io.js" defer></script>
     <script src="https://vuejs.org/js/vue.js"></script>
     <script type="text/javascript" src="js/menu.js" defer></script>
     <script type="text/javascript" src="js/js_script.js" defer></script>
@@ -58,14 +60,6 @@
                 <input type="text" id="email" name="em" required="required" placeholder="E-mail">
             </p>
             <p>
-                <label for="street">Street</label><br/>
-                <input type="text" id="street" name="st" required="required" placeholder="Street">
-            </p>
-            <p>
-                <label for="house">Number</label><br/>
-                <input type="number" id="house" name="no" required="required" placeholder="House number">
-            </p>
-            <p>
                 <label for="paymentmethod">Payment Method</label><br/>
                 <select id="paymentmethod" name="pm">
                     <option>Cash on Delivery</option>
@@ -83,7 +77,15 @@
                     for="unspecified">Unspecified</label><br/>
             </p>
         </form>
-        <button v-on:click="submitData" type="submit" id="submit-button" >
+        <h3>Click map to add order</h3>
+        <div class="view-box">
+            <div id="dots" v-on:click="displayOrder">
+                <div v-bind:style="{ left: currentOrder.details.x + 'px', top: currentOrder.details.y + 'px'}">
+                    T
+                </div>
+            </div>
+        </div>
+        <button v-on:click="addOrder" type="submit" id="submit-button" >
             <span>Place Order</span><br/>
             <img src="img/delivery_icon.png" width="24" height="24" alt="delivery_icon">
         </button>

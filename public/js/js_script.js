@@ -1,33 +1,4 @@
-function buttonClick()
-{
-    var fullName = document.getElementById("fullname").value;
-    var email = document.getElementById("email").value;
-    var street = document.getElementById("street").value;
-    var house = document.getElementById("house").value;
-    var paymentMethod = document.getElementById("paymentmethod").value;
-    var gender = getGender();
 
-    var formValues = [fullName, email, paymentMethod, street, house, gender];
-    console.log(typeof formValues);
-    for (var i = 0; i < formValues.length; i++)
-    {
-        console.log(formValues[i]);
-    }
-    console.log("Burgers ordered:");
-
-    function printBurgerQtys(value, key)
-    {
-        if (value > 0)
-        {
-            console.log(`${key.name}: ${value}`);
-        }
-    }
-
-    orderedBurgers.forEach(printBurgerQtys);
-    buildOrderListDisplay();
-    buildCustomerDetailsDisplay(formValues);
-    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
-}
 
 function getGender()
 {
@@ -70,16 +41,12 @@ function buildCustomerDetailsDisplay(formValues)
 {
     var nameDisplay = document.getElementById("name-display");
     var emailDisplay = document.getElementById("email-display");
-    var streetDisplay = document.getElementById("street-display");
-    var numberDisplay = document.getElementById("number-display");
     var paymentMethodDisplay = document.getElementById("payment-display");
     var genderDisplay = document.getElementById("gender-display");
 
     nameDisplay.innerHTML = formValues[0];
     emailDisplay.innerHTML = formValues[1];
     paymentMethodDisplay.innerHTML = formValues[2];
-    streetDisplay.innerHTML = formValues[3];
-    numberDisplay.innerHTML = formValues[4];
     genderDisplay.innerHTML = formValues[5];
 }
 

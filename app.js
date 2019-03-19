@@ -8,7 +8,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
- 
+
 // Pick arbitrary port for server
 var port = 3000;
 app.set('port', (process.env.PORT || port));
@@ -19,50 +19,52 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/vue', express.static(path.join(__dirname, '/node_modules/vue/dist/')));
 // Serve index.html directly as root page
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views/index.html'));
+    res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 // Serve map.html as /map
 app.get('/map', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views/map.html'));
+    res.sendFile(path.join(__dirname, 'views/map.html'));
 });
 // Serve dispatcher.html as /dispatcher
 app.get('/dispatcher', function (req, res) {
-  res.sendFile(path.join(__dirname, 'views/dispatcher.html'));
+    res.sendFile(path.join(__dirname, 'views/dispatcher.html'));
 });
 
 // Store data in an object to keep the global namespace clean and 
 // prepare for multiple instances of data if necessary
 function Data() {
-  this.orders = {};
+    this.orders = {};
 }
 
 /*
   Adds an order to to the queue
 */
 Data.prototype.addOrder = function (order) {
-  //Store the order in an "associative array" with orderId as key
-  this.orders[order.orderId] = order;
+    //Store the order in an "associative array" with orderId as key
+    this.orders[order.orderId] = order;
 };
 
 Data.prototype.getAllOrders = function () {
-  return this.orders;
+    console.log("GETTING ALL ORDERS:", this.orders);
+    return this.orders;
 };
 
 var data = new Data();
 
 io.on('connection', function (socket) {
-  // Send list of orders when a client connects
-  socket.emit('initialize', { orders: data.getAllOrders() });
+    // Send list of orders when a client connects
+    socket.emit('initialize', { orders: data.getAllOrders() });
+    console.log("INITIALIZED");
 
-  // When a connected client emits an "addOrder" message
-  socket.on('addOrder', function (order) {
-    data.addOrder(order);
-    // send updated info to all connected clients, note the use of io instead of socket
-    io.emit('currentQueue', { orders: data.getAllOrders() });
-  });
+    // When a connected client emits an "addOrder" message
+    socket.on('addOrder', function (order) {
+        data.addOrder(order);
+        // send updated info to all connected clients, note the use of io instead of socket
+        io.emit('currentQueue', { orders: data.getAllOrders() });
+    });
 
 });
 
 var server = http.listen(app.get('port'), function () {
-  console.log('Server listening on port ' + app.get('port'));
+    console.log('Server listening on port ' + app.get('port'));
 });

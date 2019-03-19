@@ -33,11 +33,27 @@ body {
 }
 
 #orderList {
-	top:1em;
-	left:1em;
 	position: absolute;
 	z-index: 2;
 	color:black;
-	background: rgba(255,255,255, 0.5);
+	background: rgba(50, 50, 50,0.4);
 	padding: 1em;
+}
+
+.orderListItem
+{
+	margin-top: 16px;
+	padding: 8px;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.orderListItem > h2
+{
+	margin: 0 0 8px 0;
+}
+
+.orderListItem > p
+{
+	margin: 0 0 4px 0;
+	padding: 0;
 }

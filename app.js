@@ -45,7 +45,6 @@ Data.prototype.addOrder = function (order) {
 };
 
 Data.prototype.getAllOrders = function () {
-    console.log("GETTING ALL ORDERS:", this.orders);
     return this.orders;
 };
 
@@ -54,7 +53,6 @@ var data = new Data();
 io.on('connection', function (socket) {
     // Send list of orders when a client connects
     socket.emit('initialize', { orders: data.getAllOrders() });
-    console.log("INITIALIZED");
 
     // When a connected client emits an "addOrder" message
     socket.on('addOrder', function (order) {

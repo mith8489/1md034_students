@@ -43,11 +43,13 @@ function buildCustomerDetailsDisplay(formValues)
     var emailDisplay = document.getElementById("email-display");
     var paymentMethodDisplay = document.getElementById("payment-display");
     var genderDisplay = document.getElementById("gender-display");
+    var coordDisplay = document.getElementById("coordinates-display");
 
-    nameDisplay.innerHTML = formValues[0];
-    emailDisplay.innerHTML = formValues[1];
-    paymentMethodDisplay.innerHTML = formValues[2];
-    genderDisplay.innerHTML = formValues[5];
+    nameDisplay.innerHTML = formValues.name;
+    emailDisplay.innerHTML = formValues.email;
+    paymentMethodDisplay.innerHTML = formValues.paymentMethod;
+    genderDisplay.innerHTML = formValues.gender;
+    coordDisplay.innerHTML = formValues.coordinates;
 }
 
 

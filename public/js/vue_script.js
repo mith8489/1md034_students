@@ -16,7 +16,13 @@ var vm = new Vue({
                         x: 0,
                         y: 0
                     },
-                    orderItems: []
+                    orderItems: [],
+                    personalDetails: {
+                        name: "",
+                        email: "",
+                        payment: "",
+                        gender: ""
+                    }
                 },
                 currentOrderId: 0,
                 orders: {}
@@ -78,7 +84,8 @@ var vm = new Vue({
                             x: this.currentOrder.details.x,
                             y: this.currentOrder.details.y
                         },
-                        orderItems: this.currentOrder.orderItems
+                        orderItems: this.currentOrder.orderItems,
+                        personalDetails: this.currentOrder.personalDetails
                     });
                     this.resetCurrentOrder();
                 }
@@ -96,7 +103,13 @@ var vm = new Vue({
                             x: 0,
                                 y: 0
                         },
-                        orderItems: []
+                        orderItems: [],
+                        personalDetails: {
+                            name: "",
+                            email: "",
+                            payment: "",
+                            gender: ""
+                        }
                     }
                 }
                 ,
@@ -105,8 +118,19 @@ var vm = new Vue({
                     var email = document.getElementById("email").value;
                     var paymentMethod = document.getElementById("paymentmethod").value;
                     var gender = getGender();
+                    this.currentOrder.personalDetails.name = fullName;
+                    this.currentOrder.personalDetails.email = email;
+                    this.currentOrder.personalDetails.payment = paymentMethod;
+                    this.currentOrder.personalDetails.gender = gender;
 
-                    var formValues = [fullName, email, paymentMethod, gender];
+                    var formValues =
+                        {
+                            name: fullName,
+                            email: email,
+                            paymentMethod: paymentMethod,
+                            gender: gender,
+                            coordinates: this.currentOrder.details.x + ", " + this.currentOrder.details.y
+                        };
                     /*    console.log(typeof formValues);
                         for (var i = 0; i < formValues.length; i++)
                         {
